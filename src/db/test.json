@@ -1,0 +1,7 @@
+{
+    "users" : [
+        {"name" : "홍길동", "id" : "Hong", "password" : "1234"},
+        {"name" : "장발산", "id" : "Jang", "password" : "1234"},
+        {"name" : "강호동", "id" : "Kang", "password" : "1234"}
+    ]
+}
