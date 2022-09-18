@@ -1,9 +1,10 @@
 import styles from './App.module.css';
 import Header from './component/Header';
-import Menu from './component/Menu';
+import SetMenu from './component/SetMenu';
 import SignIn from './component/SignIn';
 import LogIn from './component/LogIn';
 import Welcome from './component/Welcome';
+import ErrorPage from './component/ErrorPage';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 function App() {
@@ -19,18 +20,10 @@ function App() {
           <Route path='/signIn' element={<SignIn />} />
           <Route path='/LogIn' element={<LogIn />} />
           <Route path='/Welcome' element={<Welcome />} />
+          <Route path='/*' element={<ErrorPage />} />
         </Routes>
       </div>
     </BrowserRouter>
-  );
-}
-
-function SetMenu(){
-  return(
-    <>
-      <Menu title='회원가입' coment='회원가입을 하려면 여기를 클릭하세요.' url='/signIn' />
-      <Menu title='로그인' coment='로그인을 하려면 여기를 클릭하세요.' url='/logIn' />
-    </>
   );
 }
 

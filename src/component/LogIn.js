@@ -4,6 +4,9 @@ import dummy from '../db/test.json';
 import {useNavigate} from 'react-router-dom';
 
 export default function LogIn() {
+    const myRefs = useRef([]);
+    const navigate = useNavigate();
+
     let [myState, setMyState] = useState({
         userId : "",
         userName : "",
@@ -15,9 +18,6 @@ export default function LogIn() {
             navigate("/Welcome", {replace : true, state : myState});
         }
     }, [myState.userName]);
-
-    const myRefs = useRef([]);
-    const navigate = useNavigate();
 
     const setUserId = (value) => {
         setMyState({
@@ -36,6 +36,9 @@ export default function LogIn() {
     const validationCheck = () => {
         let check = false;
 
+        // TODO : axios 로직 구현
+
+        /* validation logic using dummy
         Object.keys(dummy.users).forEach((key) => {
             if(dummy.users[key].id === myState.userId){
                 check = true;
@@ -45,10 +48,7 @@ export default function LogIn() {
                     setMyState({
                         ...myState,
                         userName : dummy.users[key].name,
-                    }, () => {console.log(1)});
-                    //console.log(dummy.users[key].name);
-                    //console.log(myState.userName);
-                    //navigate("/Welcome", {replace : true, state : myState});
+                    });
                 }else{
                     alert("비밀번호가 다릅니다.");
                     setMyState({
@@ -65,6 +65,8 @@ export default function LogIn() {
             alert("회원가입이 되지않은 아이디입니다.");
             clearForm();
         }
+        */
+
     }
 
     const clearForm = () => {
